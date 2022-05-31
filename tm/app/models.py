@@ -14,4 +14,5 @@ class Newschedule(models.Model):
     desc=models.CharField(max_length=300, null=True)
     
 #git experiment
+#hello
 

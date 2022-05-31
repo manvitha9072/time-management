@@ -28,8 +28,7 @@ def newschedule(request):
     return render(request, 'newschedule.html')
 
 def yourschedule(request):
-    if request.method == "POST" :
-        return HttpResponse("invalid method")
+    
     username = request.POST.get("username")
     print(username)
     password = request.POST.get("password")

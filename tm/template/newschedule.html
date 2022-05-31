@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New schedule</title>
+</head>
+<body>
+  <form method='post' action='/newschedule'>
+    {% csrf_token %}
+    <div>Name:-<br><input type='text' name='name' id='name' placeholder='Enter your name here'></div><br><br>
+    <div>
+      Time alloted:-<br><input type='number' id='time1' name='time' placeholder='Enter time alloted'><br>
+      Title:-<br><input type='text' id='title1' name='title' placeholder='Enter title here'> <br>
+      Description:-<br><textarea id='desc1' name='desc' rows='10' cols='50' placeholder="enter description here"></textarea><br><br>
+      <input class="btn btn-primary" type="submit" value="Submit" onclick="alert('Your form is submitted')">
+      <input class="btn btn-primary" type="submit"  id='add' value="Submit and add another field" onClick='redirect("/newschedule")'>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Time alloted</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scopr="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody id='tableBody'>
+      <tr>
+        <th scope="row">1</th>
+        <td>-</td>
+        <td>Wake up! It's a good day. </td>
+        <td>Early to bed early to rise makes a man healty, wealty and wise</td>
+        <td><button class='btn sm-class btn-primary'>Delete</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    add=document.getElementById('add');
+    add.addEventListener("click", ()=>{
+      tim=document.getElementById('time1').value
+      tit=document.getElementById('title1').value
+      desc=document.getElementById('desc1').value
+      if (localStorage.getItem('itemsJson')==null){
+        itemJsonArray = []
+        itemJsonArray.push([tim, tit, desc])
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+      }
+      else {
+        itemJsonArray= localStorage.getItem('itemsJson')
+        itemJsonArray= JSON.parse(itemJsonArrayStr);
+        itemJsonArray.push([tim, tit, desc])
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+      }
+      tableBody = document.getElementById("tableBody")
+      let str = "";
+      itemJsonArray.forEach((element,index) => {
+        str += `
+        <th scope='row'>${index}</th>
+        <td>${element[0]}</td>
+        <td>${element[1]}</td>
+        <td>${element[2]}</td>
+        <td><button class='btn sm-class btn-primary'>Delete</td>
+      </tr>
+       `
+      });
+      tableBody.innerHTML = str;
+    });
+  </script> 
+</body>
+</html>

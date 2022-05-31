@@ -1,0 +1,23 @@
+           THIS IS THE COD THAT IS TO BE INSERTED AT THE BEGINING OF BODY
+IF THE TABLE FORMAT IS REMOVED AND FORM IS TO BE INSERTED 
+
+<form method="post" action="\newschedule">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name:</label>
+      <input type="text" id="name" name='name' placeholder="Enter full name here">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Time alloted:</label>
+      <input type="numbers" id="time" name='time' placeholder="Enter time alloted">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Title:</label>
+      <input type="text" id="title" name='title' placeholder="Enter the title of your work">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Description:</label><br>
+      <textarea  class="form-control" style=" min-width:500px; max-width:60%;min-height:150px;height:100%;width:100%;" placeholder="Enter the description of your work here"></textarea><br><br>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </div><br>
+  </form>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/yourschedule">Your schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newschedule">New schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/editschedule">Edit schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mentorship">Mentorship</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Recomendation Chart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/track">Access yourself</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <hr>
+      <h3>Hello there!</h3>
+      <p><b>Thanks for being here. We respect the time you are spending with us, and we ensure you that your experience with us will be benificial.</b></p><hr>
+      <p>Time is what we want the most, but we use the worst</p>
+      <p>Time, is the only resource that we can use the most efficiently. Though there is never time to do everything, there is always enough to do the most important things. It is all a matter of priority.But, have you ever faced difficulty in prioritizing stuff and managing time? well, we are here to solve your problem.</p>
+      <p>Not enough hours in a day? Join us to make the best use of time</p>
+      <h4>Features:- </h4>
+      <ul>1. Enter a fixed schedule and update a form daily. Compare the expected schedule to the updated schedule with a bar graph.</ul>
+      <ul>2. Get free mentorship and recomendation charts for a healthy life style.</ul>
+      <ul>3. Track or access your progress daily, weekly and monthly.</ul>
+      <hr>
+      <h4>Join us: </h4>
+      <form method="post" action="/home">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name:</label>
+          <input type="text" id="name" name='name' placeholder="Enter full name here">
+        </div><br>
+        <div class="form-group">
+          <label for="exampleFormControlInput2">Phone number:</label>
+          <input type="number" id="phnumber" name='phnumber' placeholder="Enter your 10 digit phone number here">
+        </div><br>
+          <div class="form-group">
+            <label for="exampleFormControlInput3">Email address:</label>
+            <input type="email" id="mailid" name='mailid' placeholder="name@example.com">
+          </div><br>
+          <div class="form-group">
+            <label for="exampleFormControlInput4">Profession:</label>
+            <input type="text" id="prof" name='prof' placeholder="Enter ypur profession">
+          </div><br>
+          <div class="form-group">
+            <label for="exampleFormControlInput5">Age:</label>
+            <input type="number" id="age" name='age' placeholder="Enter your age">
+          </div><br>
+          <input class="btn btn-primary" type="submit" value="Submit">
+          <p>We'll get back to you</p>
+        <hr>
+        <h4>Thank you ! Do visit us again. </h4><hr>
+      </form>
+</body>
+</html>

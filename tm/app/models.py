@@ -13,5 +13,5 @@ class Newschedule(models.Model):
     title=models.CharField(max_length=50, null=True)
     desc=models.CharField(max_length=300, null=True)
     
-
+#git experiment
 
